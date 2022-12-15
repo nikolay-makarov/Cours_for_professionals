@@ -8,7 +8,8 @@ get_days_in_month(2021, 'December')
 должен вернуть список:
 [datetime.date(2021, 12, 1), datetime.date(2021, 12, 2), ...,
 datetime.date(2021, 12, 30), datetime.date(2021, 12, 31)]"""
-import datetime, calendar
+import calendar
+import datetime
 
 
 def get_days_in_month(year: int, month_name: str) -> list[datetime.date]:
