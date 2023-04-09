@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-sample.py
+4._Working_with_files/4.4_Wording_with_json-files/sample.py
 # C extensions
 *.so
 
