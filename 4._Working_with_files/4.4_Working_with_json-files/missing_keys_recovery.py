@@ -68,6 +68,3 @@ for dict_ in data:
 
 with open('updated_people.json', 'w', encoding='utf-8') as out_file:
     json.dump(data, out_file, indent=3)
-
-keys = ['one', 'two', 'three']
-print(dict.fromkeys(keys))
