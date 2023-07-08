@@ -16,3 +16,16 @@ grades.math: [4, 4]
 не является последовательностью других ключей. Другими словами, словарь не может иметь, например, следующий вид:
 {'b.c': 1, 'b': {'c': 30, 'a': 10, 'b': 20}}
 """
+
+
+def dict_travel(nested_dicts, path=''):
+    for key, value in sorted(nested_dicts.items()):
+        if isinstance(value, dict):
+            dict_travel(value, f'{path}{key}.')
+        else:
+            print(f'{path}{key}: {value}')
+
+
+data = {'b': {'c': 30, 'a': 10, 'b': {'d': 40, 'e': 50}}}
+
+dict_travel(data)

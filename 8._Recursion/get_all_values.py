@@ -10,10 +10,22 @@
 
 
 def get_all_values(nested_dicts, key):
-    pass
+    result = set()
+    for k, val in nested_dicts.items():
+        if isinstance(val, dict):
+            result.update(get_all_values(val, key))
+        if k == key:
+            result.add(val)
+    return result
 
 
 my_dict = {'users': {'Arthur': {'grades': [4, 4, 3], 'top_grade': 4}, 'Timur': {'grades': [5, 5, 5], 'top_grade': 5}}}
 result = get_all_values(my_dict, 'top_grade')
+
+print(*sorted(result))
+print(type(result))
+
+my_dict = {'Arthur': {'hobby': 'videogames', 'drink': 'cacao'}, 'Timur': {'hobby': 'math'}}
+result = get_all_values(my_dict, 'hobby')
 
 print(*sorted(result))
